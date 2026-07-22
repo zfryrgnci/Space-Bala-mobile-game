@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Super Bala: Space Impact</title>
+    <style>
+        body { margin: 0; overflow: hidden; background-color: #000; display: flex; justify-content: center; align-items: center; height: 100vh; font-family: 'Courier New', Courier, monospace; touch-action: none; }
+        #game-wrapper { position: relative; width: 100%; max-width: 50vh; aspect-ratio: 3 / 4; background: #000; box-shadow: 0 0 30px rgba(255, 0, 255, 0.5); border: 4px solid #f0f; overflow: hidden; }
+        canvas { width: 100%; height: 100%; display: block; image-rendering: pixelated; }
+        #ui { position: absolute; top: 10px; left: 10px; color: #f0f; font-size: 20px; font-weight: bold; text-shadow: 0 0 5px #f0f; pointer-events: none; }
+        
+        .mobile-controls { position: absolute; bottom: 20px; width: 100%; display: flex; justify-content: space-between; padding: 0 20px; box-sizing: border-box; z-index: 10; }
+        .btn { width: 60px; height: 60px; background: rgba(0,0,0,0.5); border: 2px solid #f0f; color: #f0f; font-size: 24px; display: flex; justify-content: center; align-items: center; user-select: none; border-radius: 10px; }
+        .btn:active { background: #f0f; color: #000; }
+        .dpad { display: grid; grid-template-columns: 60px 60px 60px; grid-template-rows: 60px 60px; gap: 5px; }
+        .dpad .up { grid-column: 2; grid-row: 1; }
+        .dpad .left { grid-column: 1; grid-row: 2; }
+        .dpad .down { grid-column: 2; grid-row: 2; }
+        .dpad .right { grid-column: 3; grid-row: 2; }
+
+        /* ADSENSE OVERLAY UI */
+        #ad-overlay {
+            display: none;
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 100;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+        }
+        .ad-box {
+            width: 300px;
+            height: 250px;
+            background: #111;
+            border: 2px dashed #888;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            color: #888;
+            font-size: 14px;
+        }
+        #restart-btn {
+            padding: 10px 20px; font-size: 20px; font-family: 'Courier New', Courier, monospace; font-weight: bold;
+            background: transparent; color: #f0f; border: 2px solid #f0f; cursor: pointer;
+        }
+        #restart-btn:hover { background: rgba(255,255,255,0.2); }
+    </style>
+</head>
+<body>
+    <div id="game-wrapper">
+        <canvas id="gameCanvas" width="300" height="400"></canvas>
+        <div id="ui">SCORE: <span id="score">0</span></div>
+        
+        
+        <div class="mobile-controls">
+            <div class="dpad">
+                <div class="btn up" id="btn-up">↑</div>
+                <div class="btn down" id="btn-down">↓</div>
+            </div>
+            <div class="btn" id="btn-fire" style="margin-top: 65px; border-radius: 50%;">FIRE</div>
+        </div>
+
+
+        <!-- Ad Overlay -->
+        <div id="ad-overlay">
+            <h1 style="color: #f0f; margin-top: 0;">GAME OVER</h1>
+            <div class="ad-box">
+                <div>[ GOOGLE ADSENSE PLACEHOLDER ]</div>
+            </div>
+            <button id="restart-btn">PLAY AGAIN</button>
+        </div>
+    </div>
+    <script src="src/game.js"></script>
+</body>
+</html>
