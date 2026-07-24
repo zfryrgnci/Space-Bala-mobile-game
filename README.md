@@ -2,6 +2,11 @@
 
 # 🚀 Space Bala (Neon Space Impact)
 
+## 🔗 Explore the App
+
+[**Click here to explore Space-Bala-mobile-game**](https://zfryrgnci.github.io/Space-Bala-mobile-game)
+
+
 ### *A fully playable classic Nokia-era side-scrolling space shooter built with pure HTML5 Canvas.*
 
 [![Play Game](https://img.shields.io/badge/Play_Now-Click_Here-00C7B7?style=for-the-badge&logo=google-chrome)](https://zfryrgnci.github.io/Space-Bala-mobile-game/)
